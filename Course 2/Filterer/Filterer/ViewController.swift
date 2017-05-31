@@ -55,7 +55,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             if touch.view == imageView {
-                imageView.image = originalImage
+                crossFadeTransition(withImage: originalImage)
+//                imageView.image = originalImage
                 originalLbl.isHidden = false
             }
         }
@@ -65,7 +66,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             if touch.view == imageView {
-                imageView.image = filteredImage
+                crossFadeTransition(withImage: filteredImage)
+//                imageView.image = filteredImage
                 originalLbl.isHidden = true
             }
         }
@@ -74,7 +76,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Adjust the value of the filter using the slider
     @IBAction func changeValue(_ sender: UISlider) {
         filteredImage = filter.applyFilter(withName: filterChosen, withIntensity: Int(sender.value))
-        imageView.image = filteredImage
+        crossFadeTransition(withImage: filteredImage)
+//        imageView.image = filteredImage
     }
     
     // Show/hide slider view when clicked
@@ -83,7 +86,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             hideSecondaryView(editMenu)
             showSecondaryMenu(secondaryMenu)
             sender.isSelected = false
-            slider.setValue(0, animated: false)
+            slider.setValue(0, animated: false) // Reset slider
         } else {
             if filterBtn.isSelected {
                 hideSecondaryView(secondaryMenu)
@@ -173,11 +176,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Compare original and filtered images
     @IBAction func onCompare(_ sender: UIButton) {
         if sender.isSelected {
-            imageView.image = filteredImage
+            crossFadeTransition(withImage: filteredImage)
+//            imageView.image = filteredImage
             sender.isSelected = false
             originalLbl.isHidden = true
         } else {
-            imageView.image = originalImage
+            crossFadeTransition(withImage: originalImage)
+//            imageView.image = originalImage
             sender.isSelected = true
             originalLbl.isHidden = false
         }
@@ -190,16 +195,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    // Change images between filtered and original
-//    @IBAction func changeImage(_ sender: UIButton) {
-//        if !sender.isSelected {
-//            imageView.image = filteredImage
-//            sender.isSelected = true
-//        } else {
-//            imageView.image = UIImage(named: "silvi")
-//            sender.isSelected = false
-//        }
-//    }
+    // Add image with cross-fade transition
+    func crossFadeTransition(withImage image: UIImage?) {
+        UIView.transition(with: imageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            self.imageView.image = image
+        }, completion: nil)
+
+    }
+    
+    // Reset values
+    func reset() {
+        filteredImage = nil
+        filterBtn.isSelected = false
+        editBtn.isSelected = false
+        editBtn.isHidden = true
+        compareBtn.isEnabled = false
+        hideSecondaryView(secondaryMenu)
+        hideSecondaryView(editMenu)
+        imageView.isUserInteractionEnabled = false
+        slider.setValue(0, animated: false)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -225,8 +240,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         filteredImage = filter.applyFilter(withName: filters[indexPath.row])
-        imageView.image = filteredImage
         filterChosen = filters[indexPath.row]
+        
+        // Add image with cross-fade transition
+        crossFadeTransition(withImage: filteredImage)
         
         // Enable buttons after choosing filter
         imageView.isUserInteractionEnabled = true
@@ -241,11 +258,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imageView.image = image
             originalImage = image
             filter = Filter(image: image)
+            
+            // Reset buttons
+            reset()
         }
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        reset()
         dismiss(animated: true, completion: nil)
     }
 }

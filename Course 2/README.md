@@ -25,7 +25,7 @@ Part 2 Refine the UI
 
   Add a small overlay view on top of the image view with the text “Original”. This should only be visible when the user is looking at the original image.
 
-- [ ] 4. Cross-fade images when a user selects a new filter or uses the compare function.
+- [X] 4. Cross-fade images when a user selects a new filter or uses the compare function.
 
   A smoother transition between images gives the app a more refined feel.
   During the cross-fade you will need to display two images at once. You’ll need to add a second UIImageView on top of the first one, and you can animate the alpha of the top view to show or hide the bottom view.
