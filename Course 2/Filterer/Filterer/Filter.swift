@@ -25,14 +25,14 @@ class Filter {
         _image = RGBAImage(image: image)
     }
     
-    func applyFilter(withName name: FilterName) -> UIImage? {
+    func applyFilter(withName name: FilterName, withIntensity intensity: Int = 0) -> UIImage? {
         switch name {
         case .red:
-            return enhanceRed()
+            return enhanceRed(withIntensity: intensity)
         case .green:
-            return enhanceGreen()
+            return enhanceGreen(withIntensity: intensity)
         case .blue:
-            return enhanceBlue()
+            return enhanceBlue(withIntensity: intensity)
         case .grayScale:
             return grayScale()
         case .sepia:
@@ -40,7 +40,7 @@ class Filter {
         }
     }
     
-    func enhanceRed(withIntensity intensity: Int = 0) -> UIImage? {
+    func enhanceRed(withIntensity intensity: Int) -> UIImage? {
         var temp: RGBAImage = _image
         for y in 0 ..< temp.height {
             for x in 0 ..< temp.width {
@@ -60,7 +60,7 @@ class Filter {
         return temp.toUIImage()
     }
     
-    func enhanceGreen(withIntensity intensity: Int = 0) -> UIImage? {
+    func enhanceGreen(withIntensity intensity: Int) -> UIImage? {
         var temp: RGBAImage = _image
         for y in 0 ..< temp.height {
             for x in 0 ..< temp.width {
@@ -80,7 +80,7 @@ class Filter {
         return temp.toUIImage()
     }
     
-    func enhanceBlue(withIntensity intensity: Int = 0) -> UIImage? {
+    func enhanceBlue(withIntensity intensity: Int) -> UIImage? {
         var temp: RGBAImage = _image
         for y in 0 ..< temp.height {
             for x in 0 ..< temp.width {

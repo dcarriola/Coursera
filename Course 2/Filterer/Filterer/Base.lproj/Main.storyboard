@@ -120,9 +120,11 @@
                         <outlet property="compareBtn" destination="3Gl-6g-lBJ" id="TJ5-bd-iwn"/>
                         <outlet property="editBtn" destination="vvt-Mo-yxd" id="4u2-ga-9D7"/>
                         <outlet property="editMenu" destination="hSb-OV-IfB" id="aaQ-Ze-EPK"/>
+                        <outlet property="filterBtn" destination="n1E-eN-x9K" id="HfE-zi-VMb"/>
                         <outlet property="imageView" destination="9wr-DL-k9e" id="c2p-9t-ri0"/>
                         <outlet property="originalLbl" destination="ItC-Fg-eFg" id="Ko9-f8-2mO"/>
                         <outlet property="secondaryMenu" destination="anU-lc-jvY" id="BXd-1u-bX8"/>
+                        <outlet property="slider" destination="bPB-z3-2Dw" id="E8x-Ri-ylM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,8 +179,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="bPB-z3-2Dw">
-                            <rect key="frame" x="-2" y="49" width="244" height="31"/>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPB-z3-2Dw">
+                            <rect key="frame" x="8" y="49" width="224" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="ce7-w4-OmG"/>
                             </constraints>
@@ -189,8 +191,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="bPB-z3-2Dw" secondAttribute="trailing" id="6w6-nb-zk4"/>
-                        <constraint firstItem="bPB-z3-2Dw" firstAttribute="leading" secondItem="hSb-OV-IfB" secondAttribute="leading" id="7eg-tV-Krx"/>
+                        <constraint firstAttribute="trailing" secondItem="bPB-z3-2Dw" secondAttribute="trailing" constant="10" id="6w6-nb-zk4"/>
+                        <constraint firstItem="bPB-z3-2Dw" firstAttribute="leading" secondItem="hSb-OV-IfB" secondAttribute="leading" constant="10" id="7eg-tV-Krx"/>
                         <constraint firstItem="bPB-z3-2Dw" firstAttribute="centerY" secondItem="hSb-OV-IfB" secondAttribute="centerY" id="zcN-Ax-w16"/>
                     </constraints>
                 </view>

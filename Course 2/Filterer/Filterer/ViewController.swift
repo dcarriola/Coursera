@@ -16,9 +16,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var editMenu: UIView!
     @IBOutlet var secondaryMenu: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var compareBtn: UIButton!
     @IBOutlet weak var originalLbl: UILabel!
+    @IBOutlet weak var slider: UISlider!
     
     // Class variables
     var originalImage: UIImage?
@@ -46,6 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Style menu
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false // I control the constraints, no need to do auto stuff
+        editMenu.translatesAutoresizingMaskIntoConstraints = false
     }
     
     // Touch on image
@@ -70,53 +73,68 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // Adjust the value of the filter using the slider
     @IBAction func changeValue(_ sender: UISlider) {
+        filteredImage = filter.applyFilter(withName: filterChosen, withIntensity: Int(sender.value))
+        imageView.image = filteredImage
     }
     
     // Show/hide slider view when clicked
     @IBAction func onEdit(_ sender: UIButton) {
+        if sender.isSelected {
+            hideSecondaryView(editMenu)
+            showSecondaryMenu(secondaryMenu)
+            sender.isSelected = false
+            slider.setValue(0, animated: false)
+        } else {
+            if filterBtn.isSelected {
+                hideSecondaryView(secondaryMenu)
+                showSecondaryMenu(editMenu)
+                sender.isSelected = true
+            }
+        }
     }
     
     // Show/hide filters's view
     @IBAction func onFilter(_ sender: UIButton) {
         if sender.isSelected {
-            hideSecondaryView()
+            hideSecondaryView(secondaryMenu)
             sender.isSelected = false
             editBtn.isHidden = true
         } else {
-            showSecondaryMenu()
+            showSecondaryMenu(secondaryMenu)
             sender.isSelected = true
             editBtn.isHidden = false
+            editBtn.isEnabled = false
         }
     }
     
     // Show filters's view with animation
-    func showSecondaryMenu() {
-        view.addSubview(secondaryMenu)
+    func showSecondaryMenu(_ viewToShow: UIView) {
+        view.addSubview(viewToShow)
         
         // Layout
-        let bottomConstraint = secondaryMenu.bottomAnchor.constraint(equalTo: bottomMenu.topAnchor)
-        let leftConstraint = secondaryMenu.leftAnchor.constraint(equalTo: view.leftAnchor)
-        let rightConstraint = secondaryMenu.rightAnchor.constraint(equalTo: view.rightAnchor)
-        let heightConstraint = secondaryMenu.heightAnchor.constraint(equalToConstant: 90)
+        let bottomConstraint = viewToShow.bottomAnchor.constraint(equalTo: bottomMenu.topAnchor)
+        let leftConstraint = viewToShow.leftAnchor.constraint(equalTo: view.leftAnchor)
+        let rightConstraint = viewToShow.rightAnchor.constraint(equalTo: view.rightAnchor)
+        let heightConstraint = viewToShow.heightAnchor.constraint(equalToConstant: 90)
         
         NSLayoutConstraint.activate([bottomConstraint, leftConstraint, rightConstraint, heightConstraint])
         view.layoutIfNeeded()
         
         // Animation
-        secondaryMenu.alpha = 0
+        viewToShow.alpha = 0
         UIView.animate(withDuration: 0.4) {
-            self.secondaryMenu.alpha = 1
+            viewToShow.alpha = 1
         }
     }
     
     // Hide filters's view with animation
-    func hideSecondaryView() {
+    func hideSecondaryView(_ viewToHide: UIView) {
         // Animation
         UIView.animate(withDuration: 0.4, animations: {
-            self.secondaryMenu.alpha = 0
+            viewToHide.alpha = 0
         }) { (success) in
             if success {
-                self.secondaryMenu.removeFromSuperview()
+                viewToHide.removeFromSuperview()
             }
         }
     }
@@ -210,9 +228,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = filteredImage
         filterChosen = filters[indexPath.row]
         
-        // Enable compare
+        // Enable buttons after choosing filter
         imageView.isUserInteractionEnabled = true
         compareBtn.isEnabled = true
+        editBtn.isEnabled = filterChosen == .red || filterChosen == .blue || filterChosen == .green ? true : false
     }
 
     // MARK: - Image Picker

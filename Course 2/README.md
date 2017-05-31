@@ -36,7 +36,7 @@ Part 2 Refine the UI
   For each filter button, replace the text with a filtered version of that icon so that the user can see what the effect looks like before they select it.
   You may not be able to fit as many filter buttons on the screen if you use images, that’s ok, just fit as many as you can.
 
-- [ ] 6. Add an Edit button.
+- [X] 6. Add an Edit button.
 
   Add an edit button next to the Filter button in the bottom toolbar. The function of this button is to allow the user to adjust the intensity of the currently applied filter (this button should be disabled until a filter has been selected.)
   When the user taps the edit button, hide the filter option list (if visible) and show a UISlider widget instead.
