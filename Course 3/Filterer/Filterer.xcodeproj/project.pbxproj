@@ -14,9 +14,58 @@
 		114C26351EDC1FD10063CA9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114C26331EDC1FD10063CA9F /* LaunchScreen.storyboard */; };
 		114C263D1EDC21480063CA9F /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C263C1EDC21480063CA9F /* RGBAImage.swift */; };
 		1166B3451EE0621700B064B0 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166B3441EE0621700B064B0 /* PhotoView.swift */; };
+		11BDA66C1EE1D0AE0082FE43 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BDA66A1EE1D0AE0082FE43 /* Interface.storyboard */; };
+		11BDA66E1EE1D0AE0082FE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BDA66D1EE1D0AE0082FE43 /* Assets.xcassets */; };
+		11BDA6751EE1D0AE0082FE43 /* FilterWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11BDA6741EE1D0AE0082FE43 /* FilterWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11BDA67A1EE1D0AE0082FE43 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDA6791EE1D0AE0082FE43 /* InterfaceController.swift */; };
+		11BDA67C1EE1D0AE0082FE43 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BDA67B1EE1D0AE0082FE43 /* ExtensionDelegate.swift */; };
+		11BDA67E1EE1D0AE0082FE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BDA67D1EE1D0AE0082FE43 /* Assets.xcassets */; };
+		11BDA6821EE1D0AE0082FE43 /* FilterWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 11BDA6681EE1D0AD0082FE43 /* FilterWatch.app */; };
 		11E6C81C1EDDCA05000FCE7A /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6C81B1EDDCA05000FCE7A /* Filter.swift */; };
 		11E6C81E1EDDDB6F000FCE7A /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6C81D1EDDDB6F000FCE7A /* FilterCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11BDA6761EE1D0AE0082FE43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 114C261F1EDC1FD10063CA9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11BDA6731EE1D0AE0082FE43;
+			remoteInfo = "FilterWatch Extension";
+		};
+		11BDA6801EE1D0AE0082FE43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 114C261F1EDC1FD10063CA9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11BDA6671EE1D0AD0082FE43;
+			remoteInfo = FilterWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11BDA6881EE1D0AE0082FE43 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				11BDA6751EE1D0AE0082FE43 /* FilterWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BDA68A1EE1D0AE0082FE43 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				11BDA6821EE1D0AE0082FE43 /* FilterWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		114C26271EDC1FD10063CA9F /* Filterer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filterer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,12 +77,28 @@
 		114C26361EDC1FD10063CA9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		114C263C1EDC21480063CA9F /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
 		1166B3441EE0621700B064B0 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		11BDA6681EE1D0AD0082FE43 /* FilterWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilterWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BDA66B1EE1D0AE0082FE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		11BDA66D1EE1D0AE0082FE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11BDA66F1EE1D0AE0082FE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BDA6741EE1D0AE0082FE43 /* FilterWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FilterWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11BDA6791EE1D0AE0082FE43 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		11BDA67B1EE1D0AE0082FE43 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		11BDA67D1EE1D0AE0082FE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11BDA67F1EE1D0AE0082FE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11E6C81B1EDDCA05000FCE7A /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		11E6C81D1EDDDB6F000FCE7A /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		114C26241EDC1FD10063CA9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BDA6711EE1D0AE0082FE43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				114C26291EDC1FD10063CA9F /* Filterer */,
+				11BDA6691EE1D0AE0082FE43 /* FilterWatch */,
+				11BDA6781EE1D0AE0082FE43 /* FilterWatch Extension */,
 				114C26281EDC1FD10063CA9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				114C26271EDC1FD10063CA9F /* Filterer.app */,
+				11BDA6681EE1D0AD0082FE43 /* FilterWatch.app */,
+				11BDA6741EE1D0AE0082FE43 /* FilterWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +177,27 @@
 			path = Filterer;
 			sourceTree = "<group>";
 		};
+		11BDA6691EE1D0AE0082FE43 /* FilterWatch */ = {
+			isa = PBXGroup;
+			children = (
+				11BDA66A1EE1D0AE0082FE43 /* Interface.storyboard */,
+				11BDA66D1EE1D0AE0082FE43 /* Assets.xcassets */,
+				11BDA66F1EE1D0AE0082FE43 /* Info.plist */,
+			);
+			path = FilterWatch;
+			sourceTree = "<group>";
+		};
+		11BDA6781EE1D0AE0082FE43 /* FilterWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				11BDA6791EE1D0AE0082FE43 /* InterfaceController.swift */,
+				11BDA67B1EE1D0AE0082FE43 /* ExtensionDelegate.swift */,
+				11BDA67D1EE1D0AE0082FE43 /* Assets.xcassets */,
+				11BDA67F1EE1D0AE0082FE43 /* Info.plist */,
+			);
+			path = "FilterWatch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,15 +208,51 @@
 				114C26231EDC1FD10063CA9F /* Sources */,
 				114C26241EDC1FD10063CA9F /* Frameworks */,
 				114C26251EDC1FD10063CA9F /* Resources */,
+				11BDA68A1EE1D0AE0082FE43 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				11BDA6811EE1D0AE0082FE43 /* PBXTargetDependency */,
 			);
 			name = Filterer;
 			productName = Filterer;
 			productReference = 114C26271EDC1FD10063CA9F /* Filterer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		11BDA6671EE1D0AD0082FE43 /* FilterWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11BDA6891EE1D0AE0082FE43 /* Build configuration list for PBXNativeTarget "FilterWatch" */;
+			buildPhases = (
+				11BDA6661EE1D0AD0082FE43 /* Resources */,
+				11BDA6881EE1D0AE0082FE43 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11BDA6771EE1D0AE0082FE43 /* PBXTargetDependency */,
+			);
+			name = FilterWatch;
+			productName = FilterWatch;
+			productReference = 11BDA6681EE1D0AD0082FE43 /* FilterWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		11BDA6731EE1D0AE0082FE43 /* FilterWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11BDA6871EE1D0AE0082FE43 /* Build configuration list for PBXNativeTarget "FilterWatch Extension" */;
+			buildPhases = (
+				11BDA6701EE1D0AE0082FE43 /* Sources */,
+				11BDA6711EE1D0AE0082FE43 /* Frameworks */,
+				11BDA6721EE1D0AE0082FE43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FilterWatch Extension";
+			productName = "FilterWatch Extension";
+			productReference = 11BDA6741EE1D0AE0082FE43 /* FilterWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -139,6 +265,16 @@
 				ORGANIZATIONNAME = "Daniel Alejandro Carriola";
 				TargetAttributes = {
 					114C26261EDC1FD10063CA9F = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = NYQ5MASGC8;
+						ProvisioningStyle = Automatic;
+					};
+					11BDA6671EE1D0AD0082FE43 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = NYQ5MASGC8;
+						ProvisioningStyle = Automatic;
+					};
+					11BDA6731EE1D0AE0082FE43 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = NYQ5MASGC8;
 						ProvisioningStyle = Automatic;
@@ -159,6 +295,8 @@
 			projectRoot = "";
 			targets = (
 				114C26261EDC1FD10063CA9F /* Filterer */,
+				11BDA6671EE1D0AD0082FE43 /* FilterWatch */,
+				11BDA6731EE1D0AE0082FE43 /* FilterWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -171,6 +309,23 @@
 				114C26351EDC1FD10063CA9F /* LaunchScreen.storyboard in Resources */,
 				114C26321EDC1FD10063CA9F /* Assets.xcassets in Resources */,
 				114C26301EDC1FD10063CA9F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BDA6661EE1D0AD0082FE43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BDA66E1EE1D0AE0082FE43 /* Assets.xcassets in Resources */,
+				11BDA66C1EE1D0AE0082FE43 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11BDA6721EE1D0AE0082FE43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BDA67E1EE1D0AE0082FE43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +345,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11BDA6701EE1D0AE0082FE43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11BDA67C1EE1D0AE0082FE43 /* ExtensionDelegate.swift in Sources */,
+				11BDA67A1EE1D0AE0082FE43 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11BDA6771EE1D0AE0082FE43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11BDA6731EE1D0AE0082FE43 /* FilterWatch Extension */;
+			targetProxy = 11BDA6761EE1D0AE0082FE43 /* PBXContainerItemProxy */;
+		};
+		11BDA6811EE1D0AE0082FE43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11BDA6671EE1D0AD0082FE43 /* FilterWatch */;
+			targetProxy = 11BDA6801EE1D0AE0082FE43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		114C262E1EDC1FD10063CA9F /* Main.storyboard */ = {
@@ -207,6 +384,14 @@
 				114C26341EDC1FD10063CA9F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		11BDA66A1EE1D0AE0082FE43 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11BDA66B1EE1D0AE0082FE43 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -333,6 +518,76 @@
 			};
 			name = Release;
 		};
+		11BDA6831EE1D0AE0082FE43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NYQ5MASGC8;
+				IBSC_MODULE = FilterWatch_Extension;
+				INFOPLIST_FILE = FilterWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carriola.Filterer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		11BDA6841EE1D0AE0082FE43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NYQ5MASGC8;
+				IBSC_MODULE = FilterWatch_Extension;
+				INFOPLIST_FILE = FilterWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carriola.Filterer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		11BDA6851EE1D0AE0082FE43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = NYQ5MASGC8;
+				INFOPLIST_FILE = "FilterWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carriola.Filterer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		11BDA6861EE1D0AE0082FE43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = NYQ5MASGC8;
+				INFOPLIST_FILE = "FilterWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.carriola.Filterer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +608,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		11BDA6871EE1D0AE0082FE43 /* Build configuration list for PBXNativeTarget "FilterWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11BDA6851EE1D0AE0082FE43 /* Debug */,
+				11BDA6861EE1D0AE0082FE43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		11BDA6891EE1D0AE0082FE43 /* Build configuration list for PBXNativeTarget "FilterWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11BDA6831EE1D0AE0082FE43 /* Debug */,
+				11BDA6841EE1D0AE0082FE43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

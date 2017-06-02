@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FilterWatch" customModuleProvider="target">
+                    <items>
+                        <imageView height="80" alignment="left" id="G1F-iV-PEI"/>
+                        <separator alignment="left" id="6b0-vB-Uzl"/>
+                        <button width="1" alignment="left" title="New Photo" id="xG4-0e-GPD">
+                            <connections>
+                                <segue destination="OBW-Rw-9aV" kind="push" id="taT-Ki-6df"/>
+                            </connections>
+                        </button>
+                        <separator alignment="left" id="wLp-67-bpr"/>
+                        <group width="1" alignment="left" layout="vertical" spacing="2" id="nX7-iU-LMT">
+                            <items>
+                                <group width="1" alignment="left" id="zhi-BF-fPZ">
+                                    <items>
+                                        <button width="0.33000000000000002" alignment="left" title="R" id="GxU-5k-XAF">
+                                            <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </button>
+                                        <button width="0.33000000000000002" alignment="left" title="G" id="Ddi-ix-aRj">
+                                            <color key="backgroundColor" red="0.36862745099999999" green="0.70980392160000005" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </button>
+                                        <button width="0.33000000000000002" alignment="left" title="B" id="hys-qG-ehe">
+                                            <color key="backgroundColor" red="0.35686274509999999" green="0.54901960780000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="CI6-fE-eNQ">
+                                    <items>
+                                        <button width="0.33000000000000002" alignment="left" title="R" id="grL-bc-udp">
+                                            <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </button>
+                                        <button width="0.33000000000000002" alignment="left" title="G" id="0O5-wC-IFL">
+                                            <color key="backgroundColor" red="0.36862745099999999" green="0.70980392160000005" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </button>
+                                        <button width="0.33000000000000002" alignment="left" title="B" id="G1N-4j-kiG">
+                                            <color key="backgroundColor" red="0.35686274509999999" green="0.54901960780000003" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="VcC-Ix-7h0">
+                        <items>
+                            <menuItem title="Accept" icon="accept" id="bEg-nC-qMT"/>
+                            <menuItem title="Decline" icon="decline" id="V4G-8N-CW7"/>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="image" destination="G1F-iV-PEI" id="LZv-7S-TyK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="35.5"/>
+        </scene>
+        <!--Destination-->
+        <scene sceneID="5C5-1O-DhA">
+            <objects>
+                <controller identifier="Destination" title="Destination" id="OBW-Rw-9aV"/>
+            </objects>
+            <point key="canvasLocation" x="304" y="35"/>
+        </scene>
+    </scenes>
+</document>

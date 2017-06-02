@@ -283,7 +283,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PresentSocial" {
-            let destination = segue.destination
+//            let destination = segue.destination
         }
     }
 }
